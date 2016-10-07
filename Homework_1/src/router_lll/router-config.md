@@ -21,7 +21,10 @@ cisco ios使用方法模块，首先介绍了使用帮助的用法，然后介�
 
 路由器的主要任务是把通信引导到目的地网络，然后到达特定的节点站地址。后一个功能是通过网络地址分解完成的。例如，把网络地址部分的分配指定成网络、子网和区域的一组节点，其余的用来指明子网中的特别站。分层寻址允许路由器对有很多个节站的网络存储寻址信息。在广域网范围内的路由器按其转发报文的性能可以分为两种类型，即中间节点路由器和边界路由器。尽管在不断改进的各种路由协议中，对这两类路由器所使用的名称可能有很大的差别，但所发挥的作用却是一样的。中间节点路由器在网络中传输时，提供报文的存储和转发。同时根据当前的路由表所保持的路由信息情况，选择最好的路径传送报文。由多个互连的LAN组成的公司或企业网络一侧和外界广域网相连接的路由器，就是这个企业网络的连界路由器。它从外部广域网收集向本企业网络寻址的信息，转发到企业网络中有关的网络段；另一方面集中企业网络中各个LAN段向外部广域网发送的报文，对相关的报文确定最好的传输路径。  
 #### cisco路由系统的组成
-![cisco路由系统的组成]("./cisce路由系统组成.png")
+<div align="center">
+<img src="https://github.com/focus7eleven/TeamOfNetwork/blob/master/Homework_1/src/router_lll/cisco-route-system.png?raw=true" style="max-width:700px;"/>
+<p align="center">图1.1 cisco路由系统组成</p>
+</div>
 ##### cpu  
 与计算机一样，路由器也包含了一个中央处理器（CPU）。不同系列和型号的路由器，其中的CPU也不尽相同。Cisco路由器一般采用Motorola 68030和Orion/R4600两种处理器。  
 路由器的CPU负责路由器的配置管理和数据包的转发工作，如维护路由器所需的各种表格以及路由运算等。路由器对数据包的处理速度很大程度上取决于CPU的类型和性能。   
@@ -32,7 +35,10 @@ FLASH:路由器的快闪存储器，用于存放路由器的IOS，类似于计�
 NVRAM:非易失存储器，用于放置启动配置文件Startup-Config文件  
 
 ##### 接口  
-![cisco路由系统的组成]("./路由器接口.png")  
+<div align="center">
+<img src="https://github.com/focus7eleven/TeamOfNetwork/blob/master/Homework_1/src/router_lll/router-interface.png?raw=true" style="max-width:700px;"/>
+<p align="center">图1.1 路由器接口</p>
+</div>
 所有路由器都有接口（Interface），每个接口都有自己的名字和编号。一个接口的全名称由它的类型标志与数字编号构成，编号自0开始。  
 对于接口固定的路由器（如Cisco 2500系列）或采用模块化接口的路由器（如Cisco 4700系列），在接口的全名称中，只采用一个数字，并根据它们在路由器的物理顺序进行编号，例如Ethernet0表示第1个以太网接口，Serial1表示第2个串口。  
 对于支持“在线插拔和删除”或具有动态更改物理接口配置的路由器，其接口全名称中至少包含两个数字，中间用斜杠“/”分割。其中，第1个数字代表插槽编号，第2个数字代表接口卡内的端口编号。如Cisco 3600路由器中，serial3/0代表位于3号插槽上的第1个串口。  
@@ -231,16 +237,24 @@ Cisco IOS（Intenetwork Operating System）是运行于Cisco路由器和交换�
 #### 使用帮助
 在电脑上装好Packet Tracer之后，即可以使用IOS命令了。在Packet Tracer中拖动路由器图标到主串口，双击路由器即可打开配置窗口。第三个Tab页就是使用IOS命令的命令行工具。在这里输入命令即可得到执行。  
 在用户模式下输入？即可得到命令帮助。如下图：
-![用户模式？]("")  
+<div align="center">
+<img src="https://github.com/focus7eleven/TeamOfNetwork/blob/master/Homework_1/src/router_lll/user-mode.png?raw=true" style="max-width:700px;"/>
+</div>
 在特权模式下输入？同样可以得到帮助命令，帮助命令稍多。
-![特权模式？]("")  
+<div align="center">
+<img src="https://github.com/focus7eleven/TeamOfNetwork/blob/master/Homework_1/src/router_lll/special-model.png?raw=true" style="max-width:700px;"/>
+</div>
 关于用户模式和特权模式请见6、改变工作模式命令。
 #### 命令行的注释和默认设置
 
-1. 注释：很多命令都带有参数，用户输入命令的时候，命令行工具会执行输入命令，会检查命令的正确与否。在1、使用帮助中我们看到了使用？可以查看命令，同样可以看到输入命令的解释和参数的情况。比如使用常用的ping命令,可以看到起参数后面是一个ip地址。   
-![ping？]("")  
-2. 默认设置：路由器启动的时候，IOS命令行会自动输出默认设置。我们可以关闭路由器然后开启，就可以看到路由器的默认配置。  
-![路由器默认设置]("")  
+1. 注释：很多命令都带有参数，用户输入命令的时候，命令行工具会执行输入命令，会检查命令的正确与否。在1、使用帮助中我们看到了使用？可以查看命令，同样可以看到输入命令的解释和参数的情况。比如使用常用的ping命令,可以看到起参数后面是一个ip地址。  
+<div align="center">
+<img src="https://github.com/focus7eleven/TeamOfNetwork/blob/master/Homework_1/src/router_lll/ping-more.png?raw=true" style="max-width:700px;"/>
+</div>
+2. 默认设置：路由器启动的时候，IOS命令行会自动输出默认设置。我们可以关闭路由器然后开启，就可以看到路由器的默认配置。
+<div align="center">
+<img src="https://github.com/focus7eleven/TeamOfNetwork/blob/master/Homework_1/src/router_lll/router-default-config.png?raw=true" style="max-width:700px;"/>
+</div>
 图中包含了路由器的型号、内存使用情况、处理器板ID、NVRAM的大小等一系列路由器的默认设置信息。
 
 #### 实现路由器状态和查看相邻的网路设备
@@ -258,9 +272,14 @@ Cisco IOS（Intenetwork Operating System）是运行于Cisco路由器和交换�
 - Show interfaces后面还跟有参数，显示某接口的具体情况   
 
 上面我们用于查看路由器组件和过程状态的命令总称为SHOW命令。下面我们用一个简易的拓扑来检查路由器状态。  
-![网络拓扑1]("")  
-使用show interface为例来查看路由器接口状态：  
-![show-interface](show-interface)   
+<div align="center">
+<img src="https://github.com/focus7eleven/TeamOfNetwork/blob/master/Homework_1/src/router_lll/network-topology.png?raw=true" style="max-width:700px;"/>
+</div>
+使用show interface为例来查看路由器接口状态：
+<div align="center">
+<img src="https://github.com/focus7eleven/TeamOfNetwork/blob/master/Homework_1/src/router_lll/show-interface.png?raw=true" style="max-width:700px;"/>
+<p align="center">图1.1 路由器的内部结构</p>
+</div>
 从上图中可以看出，第一行显示Router0路由器的Serial0/1/0端口已经开启，第二行显示硬件版本是HD64570，第三行显示网络地址是192.168.1.1/24，第五行显示封装协议是HDLC，回环地址没有设置。  
 除了关注自己的配置，路由器还需要查看相邻的网络设备的各种状态。连接端口的情况可以通过上述show interfaces命令查看。另外，需要通过使用  查看邻居路由 命令：
 ```
@@ -268,8 +287,11 @@ show cdp interface
 show cdp neighbors [detail]
 show cdp entry routerA
 ```
-通过这三个命令可以查看邻居的路由。cdp是Cisco Discovery protocol，思科发现协议。下图是用上图的网络拓扑图中的Router0进行查看相邻的网络设备：  
-![cdp]("")  
+通过这三个命令可以查看邻居的路由。cdp是Cisco Discovery protocol，思科发现协议。下图是用上图的网络拓扑图中的Router0进行查看相邻的网络设备：
+<div align="center">
+<img src="https://github.com/focus7eleven/TeamOfNetwork/blob/master/Homework_1/src/router_lll/cdp.png?raw=true" style="max-width:700px;"/>
+<p align="center">图1.1 路由器的内部结构</p>
+</div>
  如图所示，在Router0的控制台上输入“show cdp neighbors”命令后，控制台输出与Router0相邻的网络设备Router1，其中的Local Intrfce表示路由器上的接口，Capability包括了路由器、交换机、主机等类型，Port ID表示连接在远程路由器上的接口。
 
  ##### ios及配置文件的备份
@@ -287,7 +309,10 @@ show cdp entry routerA
 #### 配置控制
 使用Cisco ios配置路由器的命令和过程是复杂的，有时候需要保存此次的配置文件以便下次使用，或者载入上次的同样配置文件继续做模拟实验，需要对配置进行控制。  
 在使用有些软件时可以通过一些界面化操作来载入和导出配置文件。如packet tracer的界面化操作：  
-![packet-tracer]("")  
+<div align="center">
+<img src="https://github.com/focus7eleven/TeamOfNetwork/blob/master/Homework_1/src/router_lll/packet-tracer.png?raw=true" style="max-width:700px;"/>
+<p align="center">图1.1 packet tracer界面</p>
+</div>
 如果不是模拟软件，则需要使用配置导入命令来导入配置文件。在3.4ios及配置文件的备份中我们已经了解到了配置文件如何备份。接下来描述配置文件恢复和载入到当前的路由器中。
 1. 确保tftp服务器处于开启状态，以及要导入的配置文件正确无误，适合路由器本身的各项参数;
 2. 清除路由器原来的startup-config文件,并reload路由器;  
@@ -370,7 +395,10 @@ enable secret level xx     MD5加密密码，同样用于指定密码作用于�
     命令解释:设置密码为cisco，这里的密码区分大小写。
 ```
 通过在一个路由器上查看password命令的详细解释：
-![showpassword]("")  
+<div align="center">
+<img src="https://github.com/focus7eleven/TeamOfNetwork/blob/master/Homework_1/src/router_lll/show-password.png?raw=true" style="max-width:700px;"/>
+<p align="center">图1.1 路由器的内部结构</p>
+</div>
 注意这里：0 5 7 的 含义不同。0 为不加密，5 为MD5 。7 为Cisco自有加密算法（不牢靠，容易被破解）。  
 service password-encryption 是使用7的加密方法加密存储在本地的所有密码。Cisco官方不推荐使用这个方法。  
 下面是简单密码验证：  
@@ -394,7 +422,10 @@ router(config-line)#login local
 router(config-line)#end
 ```
 当需要重新登录时，需要登录：
-![userLogin]("")  
+<div align="center">
+<img src="https://github.com/focus7eleven/TeamOfNetwork/blob/master/Homework_1/src/router_lll/userLogin.png?raw=true" style="max-width:700px;"/>
+<p align="center">图1.1 路由器的内部结构</p>
+</div>
 可以使用show run命令查看配置的情况。  
 分级的权限验证：如果用户只想让Level 7 的用户在特权模式下：clear counters 和reload
 配置如下：  
@@ -406,7 +437,13 @@ enable secret level 7 xxxx
 可以使用show run命令查看配置的情况。  
 
 ##### 路由器测试命令
-Cisco IOS软件包括几个命令，它可以用于测试IP网络中的基本连接情况。Ping是一个工具，用于仅仅测试网络层的连接情况。它向目的地发送一系列的ICMP回送数据包，并跟踪目的地发送回的ICMP应答信号。我们可以在用户模式下使用ping的默认特性（5个100字节数据包，2秒钟暂停），但是如果处于特权模式，可以使用其他几个选项。这就是所谓的扩展ping。扩展ping的某些可以使用的其他选项包括：大小不同的数据包，增加暂停时间，一次发送多于5个数据包，在IP报头设置“不分段”位，甚至在其他协议中使用ping，例如IPX和Apple Talk。下图是ping目的主机的IP地址：  
-![pingIP]("")
+Cisco IOS软件包括几个命令，它可以用于测试IP网络中的基本连接情况。Ping是一个工具，用于仅仅测试网络层的连接情况。它向目的地发送一系列的ICMP回送数据包，并跟踪目的地发送回的ICMP应答信号。我们可以在用户模式下使用ping的默认特性（5个100字节数据包，2秒钟暂停），但是如果处于特权模式，可以使用其他几个选项。这就是所谓的扩展ping。扩展ping的某些可以使用的其他选项包括：大小不同的数据包，增加暂停时间，一次发送多于5个数据包，在IP报头设置“不分段”位，甚至在其他协议中使用ping，例如IPX和Apple Talk。下图是ping目的主机的IP地址：
+<div align="center">
+<img src="https://github.com/focus7eleven/TeamOfNetwork/blob/master/Homework_1/src/router_lll/pingIP.png?raw=true" style="max-width:700px;"/>
+<p align="center">图1.1 路由器的内部结构</p>
+</div>
 5个感叹号说明路由器成功地收到了响应数据包。如果不是感叹号，而是点(句号)，则说明连接中断，这或者是因为ICMP回送要求从来就没有达到过目的地，或者是因为响应在网络上的某个地方被损坏了或者路由错误。测试网络层连接情况的另一个命令是TRACEROUTE命令。TRACEROUTE提供这样的信息，即通信量正在互连网上采取哪一条路径，这样的信息是按跳提供的，以及每个跳有多长。这里是一个TRACEROUTE输出的例子：  
-![traceRoute]("")  
+<div align="center">
+<img src="https://github.com/focus7eleven/TeamOfNetwork/blob/master/Homework_1/src/router_lll/traceRoute.png?raw=true" style="max-width:700px;"/>
+<p align="center">图1.1 路由器的内部结构</p>
+</div>

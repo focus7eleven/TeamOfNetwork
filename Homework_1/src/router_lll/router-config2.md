@@ -129,7 +129,10 @@ NAT相关配置命令如下：
 
 ### 路由器配置实验
 #### 静态路由协议的配置
-![静态路由配置实验]("")  
+<div align="center">
+<img src="https://github.com/focus7eleven/TeamOfNetwork/blob/master/Homework_1/src/router_lll/static-route-config-experiment.png?raw=true" style="max-width:700px;"/>
+<p align="center">图1.1 静态路由配置实验</p>
+</div>
 R1的配置：
 ```
 R1#conf ter
@@ -164,7 +167,10 @@ R3(config)#ip route 192.168.1.0 255.255.255.0 192.168.2.1  //静态路由配置
 
 #### 路由协议的配置实验
 ##### RIP配置实验
-![RIP实验]("")  
+<div align="center">
+<img src="https://github.com/focus7eleven/TeamOfNetwork/blob/master/Homework_1/src/router_lll/RIP-experiment.png?raw=true" style="max-width:700px;"/>
+<p align="center">图1.1 RIP实验</p>
+</div>
 各端口的ip地址配置如上，此时要连通网络还需要配置RIP动态路由协议。
 ```
 R1：
@@ -182,7 +188,10 @@ R3(config-router)#network 192.168.2.0
 ```
 此时在R1应该能够ping通R3. (执行命令ping 192.168.2.2)
 ##### IGRP配置实验
-![IGRP实验]("")  
+<div align="center">
+<img src="https://github.com/focus7eleven/TeamOfNetwork/blob/master/Homework_1/src/router_lll/IGRP-experiment.png?raw=true" style="max-width:700px;"/>
+<p align="center">图1.1 IGRP实验</p>
+</div>
 端口的ip地址按如图5.3所示配置（具体命令参见5.1.1）。
 ```
 R1:
@@ -201,8 +210,11 @@ R3(config-router)#network 192.168.2.0
 ```
 此时在R1应该能够ping通R3.  (执行命令ping 192.168.2.2)
 
-##### OSPF配置实验
-![OSPF实验]("")  
+##### OSPF配置实验  
+<div align="center">
+<img src="https://github.com/focus7eleven/TeamOfNetwork/blob/master/Homework_1/src/router_lll/OSPF-experiment.png?raw=true" style="max-width:700px;"/>
+<p align="center">图1.1 OSPF实验</p>
+</div>
 各端口的ip地址配置如图5.4所示。（具体的ip地址配置命令参见5.1.1）  
 如图5.4是三个路由器的简单拓扑图，我们在进行OSPF实验的时候可以把这三个路由器都放在同一个区域内，就可以做单区域的OSPF配置实验。  
 ```
@@ -261,8 +273,11 @@ R3 (config)#router ospf 1
 R3 (config-router)#summary-address 199.9.0.0 255.255.0.0
 R3 (config-router)#end
 ```
-##### BGP实验
-![BGP实验]("")
+##### BGP实验  
+<div align="center">
+<img src="https://github.com/focus7eleven/TeamOfNetwork/blob/master/Homework_1/src/router_lll/BGP-experiment.png?raw=true" style="max-width:700px;"/>
+<p align="center">图1.1 BGP实验</p>
+</div>
 如图所示RTA和RTC是连接外部Internet的ISP路由器，RTB是XYZ公司的边路网关路由器，首先为RTA和RTC这两台ISP路由器配置环回接口IP地址。这些环回接口将用于模拟通过ISP可以达到的真实网络。
 ```
 RTA (config)#int lo0
@@ -288,7 +303,10 @@ RTB (config-router)#network 172.24.1.18   remote-as 200
 RTB (config-router)#network 200.100.50.0
 ```
 #### 广域网协议(PPP和HDLC) 配置实验
-![广域网实验]("")  
+<div align="center">
+<img src="https://github.com/focus7eleven/TeamOfNetwork/blob/master/Homework_1/src/router_lll/border-network-experiment.png?raw=true" style="max-width:700px;"/>
+<p align="center">图1.1 广域网实验</p>
+</div>
 按图5.5所示配置好各端口的ip地址。（具体的ip地址配置命令参见5.1.1）  
 此时思科路由器使用默认的hdlc协议，可以用show int s0/0查看。  
 ```
@@ -375,8 +393,11 @@ Enter configuration commands, one per line.  End with CNTL/Z.
 R2(config)#int s0/0
 R2(config-if)#encapsulation hdlc
 ```
-#### NAT实验配置
-![NAT实验]("")  
+#### NAT实验配置  
+<div align="center">
+<img src="https://github.com/focus7eleven/TeamOfNetwork/blob/master/Homework_1/src/router_lll/NAT-experiment.png?raw=true" style="max-width:700px;"/>
+<p align="center">图1.1 NAT实验</p>
+</div>
 在Router0及Router3处配置Nat，替换192.168.1.0处的地址。各处地址配置如图。  
 使用RIP动态路由，配置如下：  
 ```
