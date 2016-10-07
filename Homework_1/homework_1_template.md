@@ -7,7 +7,7 @@
 路由器是在网络层实现互联的设备。路由器实现网络层上数据包的存储转发，它具有路径选择功能，可依据网络当前的拓扑结构，选择“最佳”路径，把接收的数据包转发出去，从而实现网络负载平衡，减少网络拥塞路由器工作在网络层，用于连接不同的局域网和广域网，故称为“LAN网间互联设备”。一个路由器可以连接两个局域网、一个局域网和一个广域网，或两个广域网。
 
 <div align="center">
-<img src="https://raw.githubusercontent.com/focus7eleven/TeamOfNetwork/master/Homework/router.png" style="max-width:700px;"/>
+<img src="https://github.com/focus7eleven/TeamOfNetwork/blob/master/Homework_1/src/router_cs/router.png" style="max-width:700px;"/>
 <p>图1.1 路由器的内部结构</p>
 </div>
 
