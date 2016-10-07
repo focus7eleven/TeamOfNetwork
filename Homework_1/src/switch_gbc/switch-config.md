@@ -130,7 +130,7 @@
 使用ip default-gateway命令，为交换机配置默认网关。输入与需要配置默认网关的交换机直接相连的下一跳路由器接口的IP地址。
 - 3.双工和速度  
 <div align="center">
-<img src="https://github.com/focus7eleven/TeamOfNetwork/blob/master/Homework_1/src/router_gbc/duplex_and_speed.png?raw=true" style="max-width:700px;"/>
+<img src="https://github.com/focus7eleven/TeamOfNetwork/blob/master/Homework_1/src/switch_gbc/duplex_and_speed.jpg?raw=true" style="max-width:700px;"/>
 <p align="center">图1-1 双工和速度</p>
 </div>
 可以使用duplex接口配置命令指定交换机端口的双工操作模式。可以手动设置交换机端口的双工模式和速度，以避免厂商间的自动协商问题。在将交换机端口双工设置配置为auto时可能出现问题，在图1-1中，S1和S2交换机有着相同的双工设置和速度，这是例1-1中的配置产生的。  
