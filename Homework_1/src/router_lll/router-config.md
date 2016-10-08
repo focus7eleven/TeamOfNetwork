@@ -8,8 +8,8 @@ cisco ios使用方法模块，首先介绍了使用帮助的用法，然后介�
 在路由器配置实验中，通过具体的实验拓扑图为指导，描述了各种协议的具体配置过程。  
 本文从各个方面对路由器的配置进行了描述和解析，对于理解路由器的配置各方面的原理以及具体如何配置有很好的参考价值。  
 
-### 路由器基础
-#### 路由器功能
+### 1 路由器基础
+#### 1.1 路由器功能
 路由器是在网络层实现互联的设备。路由器实现网络层上数据包的存储转发，它具有路径选择功能，可依据网络当前的拓扑结构，选择“最佳”路径，把接收的数据包转发出去，从而实现网络负载平衡，减少网络拥塞路由器工作在网络层，用于连接不同的局域网和广域网，故称为“LAN网间互联设备”。一个路由器可以连接两个局域网、一个局域网和一个广域网，或两个广域网。  
 
 路由器的具体功能如下：
@@ -20,7 +20,7 @@ cisco ios使用方法模块，首先介绍了使用帮助的用法，然后介�
 - 子网间的速率匹配——路由器有多个接口，不同接口具有不同的速率，路由器需要利用缓存及流控协议进行速率适配。  
 
 路由器的主要任务是把通信引导到目的地网络，然后到达特定的节点站地址。后一个功能是通过网络地址分解完成的。例如，把网络地址部分的分配指定成网络、子网和区域的一组节点，其余的用来指明子网中的特别站。分层寻址允许路由器对有很多个节站的网络存储寻址信息。在广域网范围内的路由器按其转发报文的性能可以分为两种类型，即中间节点路由器和边界路由器。尽管在不断改进的各种路由协议中，对这两类路由器所使用的名称可能有很大的差别，但所发挥的作用却是一样的。中间节点路由器在网络中传输时，提供报文的存储和转发。同时根据当前的路由表所保持的路由信息情况，选择最好的路径传送报文。由多个互连的LAN组成的公司或企业网络一侧和外界广域网相连接的路由器，就是这个企业网络的连界路由器。它从外部广域网收集向本企业网络寻址的信息，转发到企业网络中有关的网络段；另一方面集中企业网络中各个LAN段向外部广域网发送的报文，对相关的报文确定最好的传输路径。  
-#### cisco路由系统的组成
+#### 1.2 cisco路由系统的组成
 <div align="center">
 <img src="https://github.com/focus7eleven/TeamOfNetwork/blob/master/Homework_1/src/router_lll/cisco-route-system.png?raw=true" style="max-width:700px;"/>
 <p align="center">图1.1 cisco路由系统组成</p>
@@ -61,8 +61,8 @@ IOS为CISCO的专有操作系统，功能有连接多种网络，用于不同协
 2. 启动配置：启动配置驻留在NVRAM中，包含了希望在路由器启动时执行的配置命令。有时也把启动配置称作“备份配置”。这是由于修改并认可了运行配置后，通常应将运行配置复制到NVRAM里，将作出的改动“备份”下来，以便路由器下次启动时调用。启动完成后，启动配置中的命令就变成了“运行配置”。  
 
 两者均以ASCII文本格式显示。所以，我们能够很方便地阅读与操作。一个路由器只能从这两种类型中选择一种。
-### 路由器配置
-#### 路由器配置途径
+### 2 路由器配置
+#### 2.1 路由器配置途径
 1. 控制台
 将PC机的串口直接通过Rollover线与路由器控制台端口Console相连，在PC计算机上运行终端仿真软件，与路由器进行通信，完成路由器的配置。也可将PC与路由器辅助端口AUX直接相连，进行路由器的配置。
 2. 虚拟终端(Telnet)
@@ -75,7 +75,7 @@ ConfigMaker是一个由CISCO开发的免费的路由器配置工具。ConfigMake
 TFTP是一个TCP/IP简单文件传输协议，可将配置文件从路由器传送到TFTP服务器上，也可将配置文件从TFTP服务器传送到路由器上。TFTP不需要用户名和口令，使用非常简单。  
 
 注意：路由器的第一次设置必须通过第一种方式进行；这时终端的硬件设置为波特率：9600，数据位：8，停止位：1，无校验。
-#### ios的启动和系统配置对话
+#### 2.2 ios的启动和系统配置对话
 (1)ios的启动  
  ios的正确启动包含以下几个步骤：  
 1.	自ROM执行上电、检测CPU、内存、接口电路；
@@ -219,7 +219,7 @@ Building configuration...
 Press RETURN to get started
 
 ```
-#### 路由器状态以及配置模式
+#### 2.3 路由器状态以及配置模式
 路由器的配置模式是通过控制台连接路由器进入的模式，该模式下路由器有以下几个状态。
 1. 用户命令状态  
   前置符类似“Router>”，此时路由器处于用户命令状态，这时用户可以看路由器的连接状态，访问其它网络和主机，但不能看到和更改路由器的设置内容。
@@ -234,9 +234,9 @@ Press RETURN to get started
 6. 设置对话状态  
    这是一台新路由器开机时自动进入的状态，在特权命令状态使用SETUP命令也可进入此状态。这时可通过对话方式对路由器进行设置。  
 
-### cisco ios使用方法
+### 3 cisco ios使用方法
 Cisco IOS（Intenetwork Operating System）是运行于Cisco路由器和交换机上的操作系统，其能提供多种网络服务，进而支持多种网络应用。IOS是被用来传送网络服务并启动网络应用的。能用来加载网络协议和功能、在设备间连接高速流量、在控制访问中添加安全性防止未授权的网络使用、为简化网络的增长和冗余备份，提供可缩放性、为连接到网络中的资源，提供网络的可靠性。  
-#### 使用帮助
+#### 3.1 使用帮助
 在电脑上装好Packet Tracer之后，即可以使用IOS命令了。在Packet Tracer中拖动路由器图标到主串口，双击路由器即可打开配置窗口。第三个Tab页就是使用IOS命令的命令行工具。在这里输入命令即可得到执行。  
 在用户模式下输入？即可得到命令帮助。如下图：
 <div align="center">
@@ -249,7 +249,7 @@ Cisco IOS（Intenetwork Operating System）是运行于Cisco路由器和交换�
 </div>
 
 关于用户模式和特权模式请见6、改变工作模式命令。
-#### 命令行的注释和默认设置
+#### 3.2 命令行的注释和默认设置
 
 1. 注释：很多命令都带有参数，用户输入命令的时候，命令行工具会执行输入命令，会检查命令的正确与否。在1、使用帮助中我们看到了使用？可以查看命令，同样可以看到输入命令的解释和参数的情况。比如使用常用的ping命令,可以看到起参数后面是一个ip地址。  
 <div align="center">
@@ -263,7 +263,7 @@ Cisco IOS（Intenetwork Operating System）是运行于Cisco路由器和交换�
 
 图中包含了路由器的型号、内存使用情况、处理器板ID、NVRAM的大小等一系列路由器的默认设置信息。
 
-#### 实现路由器状态和查看相邻的网路设备
+#### 3.3 实现路由器状态和查看相邻的网路设备
 路由器的状态影响着网络的工作情况，所以经常需要了解路由器的状态，比如端口是开启还是关闭、设备是否连接通等问题。这些命令包括：
 - show running-config显示当前运行在RAM中的路由器配置。
 - show startup-config显示存储在NVRAM中的路由器配置。这是在路由器接通电源的时候使用的配置，除非进行了其他特殊的配置。
@@ -312,7 +312,7 @@ R1(config-if)# clock rate 64000
 
 ```
 
- ##### ios及配置文件的备份
+ ##### 3.4 ios及配置文件的备份
 为了方便管理，我们可以 把IOS系统及设备配置文件备份在本地计算机上，当出故障时，我们可以把IOS系统或配置文件恢复到Cisco设备上。  
 路由器可以将配置信息复制到TFTP服务器上，或从TFTP服务器上复制配置信息。这使网络管理员可以将配置信息保存在服务器上，以跟踪配置、监视修改或者灾难恢复。如果配置大于32000字节，则需要将配置保存在TFTP服务器上，因为32000字节是NVRAM可以保存的最大配置文件。当用TFTP将配置文件传送到路由器时，可以将其放置在闪存、NVRAM或RAM内存中。当将配置放置在闪存中时，仍然需要将其放置在NVRAM或RAM，目的是路由器可以使用它。COPY TETP命令可以通过控制台或VTY会话来执行。  
 复制配置文件到TFTP服务器或从TFTP服务器复制配置文件的命令如下：
@@ -324,7 +324,7 @@ R1(config-if)# clock rate 64000
 - Earase 命令是删除配置文件，慎用。
 路由器的配置参数较多，可根据实际需要增减。同时在1使用帮助中提过？帮助命令，可以查看copy命令的帮助和解释以及参数的情况，根据实际情况，做相应的备份。
 
-#### 配置控制
+#### 3.5 配置控制
 使用Cisco ios配置路由器的命令和过程是复杂的，有时候需要保存此次的配置文件以便下次使用，或者载入上次的同样配置文件继续做模拟实验，需要对配置进行控制。  
 在使用有些软件时可以通过一些界面化操作来载入和导出配置文件。如packet tracer的界面化操作：  
 <div align="center">
@@ -356,7 +356,7 @@ running-config;
 - mkdir 和DOS环境一样，可以在路由器中使用 mkdir 命令创建文件夹。一般用这个命令来创建备份文件夹，用来存储配置文件或者ISO文件的备份。
 - fsck  FAT 文件系统检测主要是用来检测flash文件系统的完整性。如果你感觉ISO文件有损坏，可以通过这个命令对文件系统进行检查。
 
-#### 改变工作模式命令
+#### 3.6 改变工作模式命令
 路由器配置工作模式分为用户(USER)模式、特权(privileged)模式、全局模式、端口配置模式和协议配置模式。
 1. USER模式的特性：用户模式仅允许基本的监测命令，在这种模式下不能改变路由器的配置，router>的命令提示符表示用户正处在USER模式下。
 2. privileged模式的特性：特权模式可以使用所有的配置命令，在用户模式下访问特权模式一般都需要一个密码，router#的命令提示符表示用户正处在特权模式下。
@@ -375,7 +375,7 @@ exit，这时，路由器的命令提示符变为router#。
 - 从全局模式router(config)#切换到协议配置模式router(config-router)#，使用如下命令: router(config)#router rip(rip可以是其它路由协议)，这时，路由器的命令提示符变为router(config-router)#。
 - 从协议配置模式router(config-router)#切换到全局模式router(config)#，使用如下命令: router(config-router)#exit，这时，路由器的命令提示符变为router(config)#。
 
-#### 口令管理
+#### 3.7 口令管理
 在CISCO路由器产品中，我们在最初进行配置的时候通常需要使用限制一般用户的访问。这对于路由器是非常重要的，在默认的情况下，我们的路由器是一个开放的系统，访问控制选项都是关闭的，任一用户都可以登陆到设备从而进行更进一步的攻击，所以需要我们的网络管理员去配置密码来限制非授权用户通过直接的连接、CONSOLE终端和从拨号MODEM线路访问设备。  
 关于Cisco IOS 的登录密码以及权限分配设置：
 ```
@@ -455,7 +455,7 @@ enable secret level 7 xxxx
 ```
 可以使用show run命令查看配置的情况。  
 
-##### 路由器测试命令
+##### 3.8 路由器测试命令
 Cisco IOS软件包括几个命令，它可以用于测试IP网络中的基本连接情况。Ping是一个工具，用于仅仅测试网络层的连接情况。它向目的地发送一系列的ICMP回送数据包，并跟踪目的地发送回的ICMP应答信号。我们可以在用户模式下使用ping的默认特性（5个100字节数据包，2秒钟暂停），但是如果处于特权模式，可以使用其他几个选项。这就是所谓的扩展ping。扩展ping的某些可以使用的其他选项包括：大小不同的数据包，增加暂停时间，一次发送多于5个数据包，在IP报头设置“不分段”位，甚至在其他协议中使用ping，例如IPX和Apple Talk。下图是ping目的主机的IP地址：
 <div align="center">
 <img src="https://github.com/focus7eleven/TeamOfNetwork/blob/master/Homework_1/src/router_lll/pingIP.png?raw=true" style="max-width:700px;"/>
@@ -466,9 +466,9 @@ Cisco IOS软件包括几个命令，它可以用于测试IP网络中的基本连
 <img src="https://github.com/focus7eleven/TeamOfNetwork/blob/master/Homework_1/src/router_lll/traceRoute.png?raw=true" style="max-width:700px;"/>
 </div>
 
-### 路由器常用配置
-#### IP协议配置
-##### 配置以太网接口
+### 4 路由器常用配置
+#### 4.1 IP协议配置
+##### 4.1.1 配置以太网接口
 在配置以太网接口时，我们需要为以太网接口配置IP地址及子网掩码来进行IP数据包的处理。默认情况下，以太网接口是管理性关闭的，所以在配置完成ip地址后，我们还需要激活接口。  
 我们以一个简易的实例来说明以太网接口的IP协议配置。在这个实例中，我们需要为以太网接口配置192.168.0.1的IP地址并且激活接口。  
 相关配置命令如下：
@@ -481,14 +481,14 @@ Cisco IOS软件包括几个命令，它可以用于测试IP网络中的基本连
 4. 在默认情况下，cisco路由器的接口是在关闭状态下的，我们需要键入“no shutdown”命令来激活接口。  
    router(config-if)#no shutdown
 
-##### 配置串行端口
+##### 4.1.2 配置串行端口
 我们可以通过虚拟终端来配置一个串行接口，配置串行接口需要以下步骤：
  1. 在全局模式下键入命令“interface serial 0”进入到串行接口配置模式下。
  2. 每一个连接的串行接口都必须有一个IP地址和子网掩码来转发IP数据包，我们可以在接口配置模式下键入“ip address <IP address> <netmask>”的命令来配置串行接口的IP地址。
  3. 如果串行接口连接的是一个DCE设备，我们还需要为串行接口配置一个时钟频率，如果是DTE设备则不需要。默认情况下，cisco路由器是一个DTE设备，但是我们可以通过使用命令来将其配置成DCE设备。我们可以在串行接口配置模式下键入“clock rate”的命令来配置时钟频率，可利用的时钟频率有“1200、2400、9600、19200, 38400、56000、64000、72000、125000、148000、500000、800000、1000000、1300000、2000000或者4000000。
  4. 在默认情况下，cisco路由器的接口是在关闭状态下的，我们需要键入“no shutdown”命令来激活接口，如果因为管理的要求，需要关闭一个接口，可以在相应的接口模式下键入“shutdown”就可以管理性关闭这个接口了。  
 
-#### IP路由配置
+#### 4.2 IP路由配置
 通过配置静态路由，用户可以人为地指定对某一网络访问时所要经过的路径,在网络结构比较简单，且一般到达某一网络所经过的路径唯一的情况下采用静态路由。  
 相关配置命令如下：
 ```  
@@ -512,11 +512,11 @@ ip route 192.200.10.4 255.255.255.252 192.1.0.65
 同时由于路由器Router3除了与路由器Router2相连外，不再与其他路由器相连，所以也可以为它赋予一条默认路由以代替以上的二条静态路由，  
 ip route 0.0.0.0 0.0.0.0 192.1.0.65   
 即只要没有在路由表里找到去特定目的地址的路径,则数据均被路由到地址为192.1.0.65的相邻路由器。
-#### 路由协议配置
+#### 4.3 路由协议配置
 路由选择用于划分拥塞的网络，增加网络上允许的节点数目、过滤器数目和管理通信量。路由选择协议用于保证网络上的路由可以使用。度用于确定从起源路由器到目的网络之间的距离或代价。度是一个路由变量值，由路由选择协议计算。路由选择信息表由路由选择协议维护，以帮助选择到达某个目的网络的最佳路径。  
 距离向量协议是比较古老的路由选择算法协议，它在最少跳的基础上选择路由。跳是在达到目的网络之前，必须经过的路由器的数量。距离相邻协议路由器向它们的相邻的路由器发送整个路由选择信息表。这个信息被拷贝到那个邻居的表中，并用新的跳进行重新计算，然后转发给其他的邻居。这意味着距离向量路由选择表是建立在第2手信息的基础之上的。距离向量协议由于其路由选择表计算的简单性和路由选择算法的简单性，而降低了CPU的开销。距离向量路由选择协议很容易被路由选择循环骚扰，但是通常通过水平分割、破坏逆转，或者暂停间隔以对付这种问题。  
 链路状态协议用于大型网络。它们在路由选择中使用代价度，并且在链路状态数据库中保存路由选择信息。当一个链路状态路由器位于网络上时，它向它的邻居发送呼叫数据包。邻居用它所了解的和它相连的链路及相关的代价信息来响应。起源路由器在来自邻居的信息的基础上建立它自己的链路状态数据库。一个链路状态路由器将定期向它的邻居发送链路状态通告，包括那个路由器的链路和相关代价。每个邻居复制数据包，并且将LSA转发到下一个邻居，这个过程称为泛洪。因为路由器并不在泛洪LSA之前再次计算路由选择数据库，减少了收敛时间。
-##### RIP配置
+##### 4.3.1 RIP配置
 RIP(Routing information Protocol)是应用较早、使用较普遍的内部网关协议(Interior Gateway Protocol,简称IGP)，适用于小型同类网络，是典型的距离向量(distance-vector)协议。在TCP/IP协议中实际上有两个版本的RIP。版本1是原始的，版本2是更新的版本。版本2由于其增强的功能而得到广泛的使用。  
 RIP通过广播UDP报文来交换路由信息，每30秒发送一次路由信息更新。RIP提供跳跃计数(hop count)作为尺度来衡量路由距离，跳跃计数是一个包到达目标所必须经过的路由器的数目。如果到相同目标有二个不等速或不同带宽的路由器，但跳跃计数相同，则RIP认为两个路由是等距离的。RIP最多支持的跳数为15，即在源和目的网间所要经过的最多路由器的数目为15，跳数16表示不可达。  
 RIP相关配置命令如下：
@@ -525,7 +525,7 @@ RIP相关配置命令如下：
 - 指定与该路由器相连的网络 ：network network
 - 配置好以后使用“show ip route”或者“show ip protocols”命令进行查看。
 
-##### IGRP配置
+##### 4.3.2 IGRP配置
 IGRP (Interior Gateway Routing Protocol)是一种动态距离向量路由协议，它由Cisco公司八十年代中期设计。使用组合用户配置尺度，包括延迟、带宽、可靠性和负载。 缺省情况下，IGRP每90秒发送一次路由更新广播，在3个更新周期内(即270秒)，没有从路由中的第一个路由器接收到更新，则宣布路由不可访问。在7个更新周期即630秒后，Cisco IOS 软件从路由表中清除路由。  
 IGRP相关配置命令如下：
 - 指定使用IGRP协议 ：router igrp autonomous-system1
@@ -533,7 +533,7 @@ IGRP相关配置命令如下：
 - 指定与该路由器相邻的节点地址 ：neighbor ip-address
 - 同样的，配置好以后使用“show ip route”或者“show ip protocols”命令进行查看。
 
-##### OSPF配置
+##### 4.3.3 OSPF配置
 OSPF(Open Shortest Path First)是一个内部网关协议(Interior Gateway Protocol,简称IGP)，用于在单一自治系统(autonomous system,AS)内决策路由。与RIP相对，OSPF是链路状态路有协议，而RIP是距离向量路由协议。  
 链路是路由器接口的另一种说法，因此OSPF也称为接口状态路由协议。OSPF通过路由器之间通告网络接口的状态来建立链路状态数据库，生成最短路径树，每个OSPF路由器使用这些最短路径构造路由表。  
 OSPF配置命令如下：
@@ -548,7 +548,7 @@ OSPF配置命令如下：
 - OSPF简单密码鉴别：ip ospf authentication - key {密匙}
 - OSPF MD5鉴别：ip ospf mesagedigest - key {密匙标识符} MD5 {密匙}。
 
-##### BGP配置
+##### 4.3.4 BGP配置
 BGP（Border Gateway Protocol）是运行于 TCP 上的一种自治系统的路由协议。 BGP 是唯一一个用来处理像因特网大小的网络的协议，也是唯一能够妥善处理好不相关路由域间的多路连接的协议。 BGP 构建在 EGP 的经验之上。 BGP 系统的主要功能是和其他的 BGP 系统交换网络可达信息。网络可达信息包括列出的自治系统（AS）的信息。这些信息有效地构造了 AS 互联的拓朴图并由此清除了路由环路，同时在 AS 级别上可实施策略决策。  
 BGP相关配置命令如下：
 - 指定使用IGRP协议 ：router igrp autonomous-system1
@@ -557,8 +557,8 @@ BGP相关配置命令如下：
 - 查看配置：show ip bgp
 - 清除BGP协议：clear ip bgp
 
-#### 广域网协议配置
-##### HDLC配置
+#### 4.4 广域网协议配置
+##### 4.4.1 HDLC配置
 HDLC（High-Level Data Link Control）是点到点串行线路上（同步电路）的帧封装格式，其帧格式与以太网帧格式有很大的差别，HDLC帧没有源MAC地址和目的MAC地址。HDLC是CISCO路由器使用的缺省协议，一台新路由器在未指定封装协议时默认使用HDLC封装。  
 配置方法如下：  
 - 在特权模式下输入config t命令进入配置模式。
@@ -566,7 +566,7 @@ HDLC（High-Level Data Link Control）是点到点串行线路上（同步电路
 - HDLC协议封装。输入encapsulation HDLC，按回车。
 - 设置带宽。输入bandwidth 传输速率[kilobits/second]，如56K，则输入bandwidth 56。
 
-##### PPP配置
+##### 4.4.2 PPP配置
 PPP（Point to Point Protocol）和HDLC一样，PPP也是串行线路上（同步电路或者异步电路）的一种帧封装格式，但是PPP可以提供对多种网络层协议的支持。PPP支持认证、多线路捆绑、回拨、压缩等功能。PPP经过4个过程在一个点到点的链路上建立通信连接：
 1. 链路的建立和配置协调：通信的发起方发送LCP帧来配置和检测数据链路
 2. 链路质量检测：在链路已经建立、协调之后进行，这一阶段是可选的
@@ -580,7 +580,7 @@ CHAP（Challenge Handshake Authentication Protocol）和PAP（Password Authentic
 - 设置带宽，输入bandwidth 带宽。
 - Ctrl+Z，结束配置。
 
-#### NAT配置
+#### 4.5 NAT配置
 NAT（Network Address Translation，网络地址转换），当在专用网内部的一些主机本来已经分配到了本地IP地址（即仅在本专用网内使用的专用地址），但现在又想和因特网上的主机通信（并不需要加密）时，可使用NAT方法。  
 这种方法需要在专用网连接到因特网的路由器上安装NAT软件。装有NAT软件的路由器叫做NAT路由器，它至少有一个有效的外部全球IP地址。这样，所有使用本地地址的主机在和外界通信时，都要在NAT路由器上将其本地地址转换成全球IP地址，才能和因特网连接。另外，这种通过使用少量的公有IP 地址代表较多的私有IP 地址的方式，将有助于减缓可用的IP地址空间的枯竭。  
 NAT相关配置命令如下：  
@@ -595,11 +595,11 @@ NAT相关配置命令如下：
 - ip nat outside source list access-list-number pool pool-name [overload]：使用该命令定义访问控制列表与NAT外部局部地址池之间的映射
 - ip nat inside destination list access-list-number pool pool-name：使用该命令定义访问控制列表与终端NAT地址池之间的映射  
 
-### 路由器配置实验
-#### 静态路由协议的配置
+### 5 路由器配置实验
+#### 5.1 静态路由协议的配置
 <div align="center">
 <img src="https://github.com/focus7eleven/TeamOfNetwork/blob/master/Homework_1/src/router_lll/static-route-config-experiment.png?raw=true" style="max-width:700px;"/>
-<p align="center">图1.1 静态路由配置实验</p>
+<p align="center">图5.1 静态路由配置实验</p>
 </div>
 
 R1的配置：
@@ -634,11 +634,11 @@ R3(config)#ip route 192.168.1.0 255.255.255.0 192.168.2.1  //静态路由配置
 ```
 此时网络连通，在R3执行ping 192.168.1.1指令能够成功Ping通。
 
-#### 路由协议的配置实验
-##### RIP配置实验
+#### 5.2 路由协议的配置实验
+##### 5.2.1 RIP配置实验
 <div align="center">
 <img src="https://github.com/focus7eleven/TeamOfNetwork/blob/master/Homework_1/src/router_lll/RIP-experiment.png?raw=true" style="max-width:700px;"/>
-<p align="center">图1.1 RIP实验</p>
+<p align="center">图5.2 RIP实验</p>
 </div>
 
 各端口的ip地址配置如上，此时要连通网络还需要配置RIP动态路由协议。
@@ -657,7 +657,7 @@ R3(config)#router rip
 R3(config-router)#network 192.168.2.0
 ```
 此时在R1应该能够ping通R3. (执行命令ping 192.168.2.2)
-##### IGRP配置实验
+##### 5.2.2 IGRP配置实验
 <div align="center">
 <img src="https://github.com/focus7eleven/TeamOfNetwork/blob/master/Homework_1/src/router_lll/IGRP-experiment.png?raw=true" style="max-width:700px;"/>
 <p align="center">图5.3 IGRP实验</p>
@@ -681,7 +681,7 @@ R3(config-router)#network 192.168.2.0
 ```
 此时在R1应该能够ping通R3.  (执行命令ping 192.168.2.2)
 
-##### OSPF配置实验  
+##### 5.2.3 OSPF配置实验  
 <div align="center">
 <img src="https://github.com/focus7eleven/TeamOfNetwork/blob/master/Homework_1/src/router_lll/OSPFexperiment.png?raw=true" style="max-width:700px;"/>
 <p align="center">图5.4 OSPF实验</p>
@@ -745,10 +745,10 @@ R3 (config)#router ospf 1
 R3 (config-router)#summary-address 199.9.0.0 255.255.0.0
 R3 (config-router)#end
 ```
-##### BGP实验  
+##### 5.2.4 BGP实验  
 <div align="center">
 <img src="https://github.com/focus7eleven/TeamOfNetwork/blob/master/Homework_1/src/router_lll/BGP-experiment.png?raw=true" style="max-width:700px;"/>
-<p align="center">图1.1 BGP实验</p>
+<p align="center">图5.7 BGP实验</p>
 </div>
 
 如图所示RTA和RTC是连接外部Internet的ISP路由器，RTB是XYZ公司的边路网关路由器，首先为RTA和RTC这两台ISP路由器配置环回接口IP地址。这些环回接口将用于模拟通过ISP可以达到的真实网络。
@@ -775,7 +775,7 @@ RTB (config-router)#neighbor 192.168.1.5  remote-as 100
 RTB (config-router)#network 172.24.1.18   remote-as 200
 RTB (config-router)#network 200.100.50.0
 ```
-#### 广域网协议(PPP和HDLC) 配置实验
+#### 5.3 广域网协议(PPP和HDLC) 配置实验
 <div align="center">
 <img src="https://github.com/focus7eleven/TeamOfNetwork/blob/master/Homework_1/src/router_lll/border-network-experiment.png?raw=true" style="max-width:700px;"/>
 <p align="center">图5.5 广域网实验</p>
@@ -867,7 +867,7 @@ Enter configuration commands, one per line.  End with CNTL/Z.
 R2(config)#int s0/0
 R2(config-if)#encapsulation hdlc
 ```
-#### NAT实验配置  
+#### 5.4 NAT实验配置  
 <div align="center">
 <img src="https://github.com/focus7eleven/TeamOfNetwork/blob/master/Homework_1/src/router_lll/NAT-experiment.jpg?raw=true" style="max-width:700px;"/>
 <p align="center">图1.1 NAT实验</p>
@@ -886,7 +886,7 @@ Router3:
   router rip
   network 200.200.201.0
 ```
-##### 静态NAT实验
+##### 5.4.1 静态NAT实验
 在Router0处配置NAT  
 ```
 Router>enable
@@ -922,7 +922,7 @@ icmp 200.200.200.120:9 192.168.1.2:9      200.200.201.100:9  200.200.201.100:9
 由上图可知，在pc0上192.168.1.2已经成功建立了NAT转发表，pc1上192.168.1.3因为没有ping任何外部网络，所以它的转发表为空。  
 在Router3处配置NAT  
 类似于Router0的配置。  
-##### 动态NAT配置
+##### 5.4.2 动态NAT配置
 ```
 Router0：
 Router0(config)#int f0/0
