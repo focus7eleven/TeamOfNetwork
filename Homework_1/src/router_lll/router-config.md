@@ -297,7 +297,6 @@ show cdp entry routerA
 通过这三个命令可以查看邻居的路由。cdp是Cisco Discovery protocol，思科发现协议。下图是用上图的网络拓扑图中的Router0进行查看相邻的网络设备：
 <div align="center">
 <img src="https://github.com/focus7eleven/TeamOfNetwork/blob/master/Homework_1/src/router_lll/cdp.png?raw=true" style="max-width:700px;"/>
-<p align="center">图1.1 cdp查看相邻网路设备</p>
 </div>
 
  如图所示，在Router0的控制台上输入“show cdp neighbors”命令后，控制台输出与Router0相邻的网络设备Router1，其中的Local Intrfce表示路由器上的接口，Capability包括了路由器、交换机、主机等类型，Port ID表示连接在远程路由器上的接口。
@@ -329,7 +328,7 @@ R1(config-if)# clock rate 64000
 在使用有些软件时可以通过一些界面化操作来载入和导出配置文件。如packet tracer的界面化操作：  
 <div align="center">
 <img src="https://github.com/focus7eleven/TeamOfNetwork/blob/master/Homework_1/src/router_lll/packet-tracer.png?raw=true" style="max-width:700px;"/>
-<p align="center">图1.1 packet tracer界面</p>
+<p align="center">图3.1 packet tracer界面</p>
 </div>
 
 如果不是模拟软件，则需要使用配置导入命令来导入配置文件。在3.4ios及配置文件的备份中我们已经了解到了配置文件如何备份。接下来描述配置文件恢复和载入到当前的路由器中。
@@ -870,7 +869,7 @@ R2(config-if)#encapsulation hdlc
 #### 5.4 NAT实验配置  
 <div align="center">
 <img src="https://github.com/focus7eleven/TeamOfNetwork/blob/master/Homework_1/src/router_lll/NAT-experiment.jpg?raw=true" style="max-width:700px;"/>
-<p align="center">图1.1 NAT实验</p>
+<p align="center">图5.6 NAT实验</p>
 </div>
 在Router0及Router3处配置Nat，替换192.168.1.0处的地址。各处地址配置如图。  
 使用RIP动态路由，配置如下：  
