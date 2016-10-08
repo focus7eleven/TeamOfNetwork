@@ -118,7 +118,7 @@ MAC地址表中的内容主要包括交换机端口、与交换机端口相连�
 两台处于不同子网的主机通信，必须通过路由器进行路由。在图3.4中，主机A向主机B发送的第1个数据包必须经过三层交换机中的路由处理器进行路由才能到达主机B，但是当以后的数据包再发向主机B时，就不必再经过路由处理器处理了，因为三层交换机有“记忆”路由的功能。
 
 <div align="center">
-<img src="="https://github.com/focus7eleven/TeamOfNetwork/blob/master/Homework_1/src/switch_wwh/switch_3_4.png?raw=true" style="max-width:700px;"/>
+<img src="https://github.com/focus7eleven/TeamOfNetwork/blob/master/Homework_1/src/switch_wwh/switch_3_4.png?raw=true" style="max-width:700px;"/>
 <p>图3.4 三层交换技术原理</p>
 </div>
 
