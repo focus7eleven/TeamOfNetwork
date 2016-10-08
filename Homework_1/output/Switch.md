@@ -70,7 +70,7 @@ MAC地址表中的内容主要包括交换机端口、与交换机端口相连�
 4. 如果该记录在一定时间内没有新的帧传到交换机来刷新，这个记录被废弃。
 
 <div align="center">
-<img src="" style="max-width:700px;"/>
+<img src="https://github.com/focus7eleven/TeamOfNetwork/blob/master/Homework_1/src/switch_wwh/switch_3_1.jpeg?raw=true" style="max-width:700px;"/>
 <p>图3.1 泛洪数据包</p>
 </div>
 
@@ -83,7 +83,7 @@ MAC地址表中的内容主要包括交换机端口、与交换机端口相连�
 当站点A发送一帧到站点C时，交换机查询到站点C的MAC地址和端口F0/2，这里交换机将站点A发送的数据包直接转发给站点C，而不发送给B和D站点，如图3.2所示。只要在MAC地址表中记录生命周期内所有站点发送数据帧，就可以建立起完整的MAC地址表。
 
 <div align="center">
-<img src="" style="max-width:700px;"/>
+<img src="https://github.com/focus7eleven/TeamOfNetwork/blob/master/Homework_1/src/switch_wwh/switch_3_2.jpeg?raw=true" style="max-width:700px;"/>
 <p>图3.2 站点应答</p>
 </div>
 
@@ -91,7 +91,7 @@ MAC地址表中的内容主要包括交换机端口、与交换机端口相连�
 当一个帧带有一个已知目的地址到达时，它被转发到连接该站点而不是所有站点的端口。在图3.3中，站点A给站点C发送一帧。当目的MAC地址（站点C的MAC地址）已在MAC地址表中时，交换机只将帧传输到表中所列的这个端口。
 
 <div align="center">
-<img src="" style="max-width:700px;"/>
+<img src="https://github.com/focus7eleven/TeamOfNetwork/blob/master/Homework_1/src/switch_wwh/switch_3_3.jpeg?raw=true" style="max-width:700px;"/>
 <p>图3.3 交换机过滤决策</p>
 </div>
 
@@ -118,7 +118,7 @@ MAC地址表中的内容主要包括交换机端口、与交换机端口相连�
 两台处于不同子网的主机通信，必须通过路由器进行路由。在图3.4中，主机A向主机B发送的第1个数据包必须经过三层交换机中的路由处理器进行路由才能到达主机B，但是当以后的数据包再发向主机B时，就不必再经过路由处理器处理了，因为三层交换机有“记忆”路由的功能。
 
 <div align="center">
-<img src="" style="max-width:700px;"/>
+<img src="="https://github.com/focus7eleven/TeamOfNetwork/blob/master/Homework_1/src/switch_wwh/switch_3_4.jpeg?raw=true" style="max-width:700px;"/>
 <p>图3.4 三层交换技术原理</p>
 </div>
 
@@ -251,6 +251,7 @@ MAC地址表中的内容主要包括交换机端口、与交换机端口相连�
   在交换机S1上配置端口F0/1的具体步骤描述如例4-1所示。
 
   例4-1 duplex和speed命令:
+
 ```
 S1# configure terminal
 S1(config)# interface fastethernet 0/1
@@ -258,11 +259,13 @@ S1(config-if)# duplex auto
 S1(config-if)# speed auto
 S1(config-if)# end
 ```
+
 - 4.HTTP访问
 
   如例1-2是启用HTTP访问的基本配置，ip http authentication enable 是全局配置命令模式。
 
   例1-2 启用HTTP访问的基本配置:
+
 ```
 S1# configure terminal
 S1(config)# ip http authentication enable
